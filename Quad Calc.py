@@ -25,7 +25,6 @@ def quadCalc1(x, y, z):
 
     return answer;
 
-
 def quadCalc2(x, y, z):
     a = float(x);
     b = float(y);
@@ -63,10 +62,10 @@ def vertY(x, y, z):
     over2A = 2 * a;
 
     vertX = negB / over2A;
-
     vertX2 = math.pow(vertX, 2);
 
     answer = (a*vertX2) + (b*vertX) + c;
+    
     return answer;
 
 
@@ -81,15 +80,12 @@ def main():
 
     if vertY(varA, varB, varC) > 0:
         print("There are no X intercepts for this function.");
-
     elif vertY(varA, varB, varC) == 0:
         print("The X intercept for this function is: ", vertX(varA, varB));
-
     else:
         print("The X intercepts for this function are: ", quadCalc1(varA, varB, varC), "and", quadCalc2(varA, varB, varC));
 
     print("The vertex for the function is: (", vertX(varA, varB), ",", vertY(varA, varB, varC), ")");
-
     print("Y intercept: ", varC);
 
     graphFunction(varA, varB, varC)
