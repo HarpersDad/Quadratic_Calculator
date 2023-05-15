@@ -1,4 +1,14 @@
 import math
+import numpy as np
+import matplotlib.pyplot as plt
+
+def graphFunction(a, b, c):
+    x = np.linspace(-10, 10, 100)
+    y = (int(a) * (x * x)) + (int(b) * x) + int(c)
+
+    plt.plot(x, y)
+    plt.show()
+
 def quadCalc1(x, y, z):
     a = float(x);
     b = float(y);
@@ -80,6 +90,8 @@ def main():
 
     print("The vertex for the function is: (", vertX(varA, varB), ",", vertY(varA, varB, varC), ")");
 
-    print("y intercept: ", varC);
+    print("Y intercept: ", varC);
+
+    graphFunction(varA, varB, varC)
 
 main()
