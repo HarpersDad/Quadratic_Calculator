@@ -93,14 +93,12 @@ def main():
     varB = input("Enter a number for b: ")
     varC = input("Enter a number for c: ")
 
-    varSum = int (varA + varB + varC)
 
-    if varSum == 0:
+    if int (varA) == 0:
         print("You have given us a line, not a parabola.")
 
     else:
         goDoMath(varA, varB, varC)
-
 
 
 main()
