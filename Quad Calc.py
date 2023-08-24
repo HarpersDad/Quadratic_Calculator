@@ -3,6 +3,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+def goDoMath(varA, varB, varC):
+    if vertY(varA, varB, varC) > 0:
+        print("There are no X-intercepts for this function.")
+    elif vertY(varA, varB, varC) == 0:
+        print("The X intercept for this function is: ", vertX(varA, varB))
+    else:
+        quadCalc1(varA, varB, varC)
+
+    print("This is your quadratic equation: y = (", varA, ")x^2 + (", varB, ")x + (", varC, ")", sep='')
+    print("The vertex for the function is: (", vertX(varA, varB), ",", vertY(varA, varB, varC), ")")
+    print("Y intercept: ", varC)
+
+    graphFunction(varA, varB, varC)
+
 def graphFunction(a, b, c):
     x = np.linspace(-10, 10, 100)
     y = (int(a) * (x * x)) + (int(b) * x) + int(c)
@@ -79,18 +93,14 @@ def main():
     varB = input("Enter a number for b: ")
     varC = input("Enter a number for c: ")
 
-    if vertY(varA, varB, varC) > 0:
-        print("There are no X-intercepts for this function.")
-    elif vertY(varA, varB, varC) == 0:
-        print("The X intercept for this function is: ", vertX(varA, varB))
+    varSum = int (varA + varB + varC)
+
+    if varSum == 0:
+        print("You have given us a line, not a parabola.")
+
     else:
-        quadCalc1(varA, varB, varC)
+        goDoMath(varA, varB, varC)
 
-    print("This is your quadratic equation: y = (", varA, ")x^2 + (", varB, ")x + (", varC, ")", sep='')
-    print("The vertex for the function is: (", vertX(varA, varB), ",", vertY(varA, varB, varC), ")")
-    print("Y intercept: ", varC)
-
-    graphFunction(varA, varB, varC)
 
 
 main()
