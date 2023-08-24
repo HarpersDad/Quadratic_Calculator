@@ -7,3 +7,4 @@
 <h2>Recent Changes</h2>
 
 - Fixed an issue where if an imaginary number was encountered the program would break.<br>
+- Fixed an issue where if all inputs were 0 the program would break.<br>
