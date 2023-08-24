@@ -19,12 +19,15 @@ def quadCalc1(x, y, z):
     negB = -1*b
     B2 = math.pow(b,2)
     fourAC = (4*a*c)
+    squirt = B2-fourAC
     over2A = 2*a
 
-    top = negB + math.sqrt(B2 - fourAC)
-    answer = top / over2A
-
-    return answer
+    if squirt <= 0:
+        return print("There are no X-intercepts for this function.")
+    else:
+        top = negB + math.sqrt(squirt)
+        answer = top / over2A
+        return print("The X-intercepts for this function are: ", answer, "and", quadCalc2(x, y, z))
 
 
 def quadCalc2(x, y, z):
@@ -32,12 +35,13 @@ def quadCalc2(x, y, z):
     b = float(y)
     c = float(z)
 
-    negB = -1 * b
+    negB = -1*b
     B2 = math.pow(b, 2)
-    fourAC = (4 * a * c)
-    over2A = 2 * a
+    fourAC = (4*a*c)
+    squirt = B2-fourAC
+    over2A = 2*a
 
-    top = negB - math.sqrt(B2 - fourAC)
+    top = negB + math.sqrt(squirt)
     answer = top / over2A
 
     return answer
@@ -76,11 +80,11 @@ def main():
     varC = input("Enter a number for c: ")
 
     if vertY(varA, varB, varC) > 0:
-        print("There are no X intercepts for this function.")
+        print("There are no X-intercepts for this function.")
     elif vertY(varA, varB, varC) == 0:
         print("The X intercept for this function is: ", vertX(varA, varB))
     else:
-        print("The X intercepts for this function are: ", quadCalc1(varA, varB, varC), "and", quadCalc2(varA, varB, varC))
+        quadCalc1(varA, varB, varC)
 
     print("This is your quadratic equation: y = (", varA, ")x^2 + (", varB, ")x + (", varC, ")", sep='')
     print("The vertex for the function is: (", vertX(varA, varB), ",", vertY(varA, varB, varC), ")")
