@@ -39,9 +39,9 @@ def quadCalc1(x, y, z):
     if squirt <= 0:
         return print("There are no X-intercepts for this function.")
     else:
-        top = negB + math.sqrt(squirt)
+        top = float(negB + math.sqrt(squirt))
         answer = top / over2A
-        return print("The X-intercepts for this function are: ", answer, "and", quadCalc2(x, y, z))
+        return print("The X-intercepts for this function are: ", round(answer, 4), "and", quadCalc2(x, y, z))
 
 
 def quadCalc2(x, y, z):
@@ -55,10 +55,10 @@ def quadCalc2(x, y, z):
     squirt = B2-fourAC
     over2A = 2*a
 
-    top = negB + math.sqrt(squirt)
+    top = negB - math.sqrt(squirt)
     answer = top / over2A
 
-    return answer
+    return round(answer, 4)
 
 
 def vertX(x, y):
@@ -69,7 +69,7 @@ def vertX(x, y):
     over2A = 2*a
     answer = negB / over2A
 
-    return answer
+    return round(answer, 4)
 
 
 def vertY(x, y, z):
@@ -83,7 +83,7 @@ def vertY(x, y, z):
     vertX2 = math.pow(vertX, 2)
     answer = (a*vertX2) + (b*vertX) + c
 
-    return answer
+    return round(answer, 4)
 
 
 def main():
@@ -93,6 +93,7 @@ def main():
     varB = input("Enter a number for b: ")
     varC = input("Enter a number for c: ")
 
+    print("\nAll outputs have been rounded at most to the 4th decimal place.\n")
 
     if int (varA) == 0:
         print("You have given us a line, not a parabola.")
