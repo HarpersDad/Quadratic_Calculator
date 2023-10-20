@@ -15,6 +15,8 @@ def goDoMath(varA, varB, varC):
     print("The vertex for the function is: (", vertX(varA, varB), ",", vertY(varA, varB, varC), ")")
     print("Y intercept: ", varC)
 
+    plt.title("y = (" + varA + ")x^2 + (" + varB + ")X + (" + varC + ")")
+
     graphFunction(varA, varB, varC)
 
 def graphFunction(a, b, c):
